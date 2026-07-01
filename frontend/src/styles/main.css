@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4d0c8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #b0aca4; }
+
+/* Resume editor transitions */
+.fade-enter-active, .fade-leave-active { transition: opacity 0.2s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+
+/* Rich input styles */
+.input-field {
+  @apply w-full px-3 py-2 text-sm border border-stone-200 rounded-lg
+         bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20
+         focus:border-blue-400 transition-all duration-150 resize-none;
+}
+
+.btn-primary {
+  @apply px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg
+         hover:bg-gray-800 active:scale-[0.98] transition-all
+         disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply px-5 py-2.5 bg-white text-gray-700 text-sm font-medium rounded-lg
+         border border-stone-200 hover:bg-stone-50 active:scale-[0.98]
+         transition-all;
+}
+
+.section-card {
+  @apply bg-white border border-stone-100 rounded-xl p-5 shadow-sm;
+}
