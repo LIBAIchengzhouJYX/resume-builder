@@ -14,7 +14,7 @@ export const useResumeStore = defineStore('resume', {
       this.resumes = res.data
     },
     async loadResume(id) {
-      const res = await api.get(`/resumes/${id}`)
+      const res = await api.get('/resumes/' + id)
       this.currentResume = res.data
     },
     async saveResume(data) {
@@ -22,7 +22,7 @@ export const useResumeStore = defineStore('resume', {
       try {
         let res
         if (data.id) {
-          res = await api.put(`/resumes/${data.id}`, data)
+          res = await api.put('/resumes/' + data.id, data)
         } else {
           res = await api.post('/resumes', data)
         }
@@ -34,13 +34,11 @@ export const useResumeStore = defineStore('resume', {
       }
     },
     async deleteResume(id) {
-      await api.delete(`/resumes/${id}`)
+      await api.delete('/resumes/' + id)
       await this.loadResumes()
     },
     async exportPdf(id) {
-      const res = await api.get(`/export/pdf/${id}`, {
-        responseType: 'blob'
-      })
+      const res = await api.get('/export/pdf/' + id, { responseType: 'blob' })
       const url = URL.createObjectURL(res.data)
       const a = document.createElement('a')
       a.href = url
@@ -48,4 +46,4 @@ export const useResumeStore = defineStore('resume', {
       a.click()
       URL.revokeObjectURL(url)
     },
-    as
+    async exportPdfF
