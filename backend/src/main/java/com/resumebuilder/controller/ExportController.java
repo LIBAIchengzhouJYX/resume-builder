@@ -3,6 +3,7 @@ package com.resumebuilder.controller;
 import com.resumebuilder.model.User;
 import com.resumebuilder.service.PdfExportService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -28,7 +29,4 @@ public class ExportController {
                             "attachment; filename=\"resume.pdf\"")
                     .body(pdf);
         } catch (Exception e) {
-            return ResponseEntity.internalServerError().build();
-        }
-    }
-}
+            return ResponseEn

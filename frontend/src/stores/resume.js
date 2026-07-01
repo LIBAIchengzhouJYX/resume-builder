@@ -47,6 +47,5 @@ export const useResumeStore = defineStore('resume', {
       a.download = 'resume.pdf'
       a.click()
       URL.revokeObjectURL(url)
-    }
-  }
-})
+    },
+    as
