@@ -79,6 +79,7 @@
             @ai-polish="openAiForField('summaryEN', $event)"
             placeholder="2-3 sentences about your background, strengths, and career direction. Supports **bold**, *italic*, - lists, etc."
             :rows="3" class="mt-3" />
+        </SectionCard>
 
         <!-- Skills — structured inputs for labels, freestyle for body -->
         <SectionCard title="技能 / Skills" icon="zap">
